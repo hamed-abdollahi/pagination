@@ -1,8 +1,8 @@
 # pagination
-This method help you create your own pagination based of needs
+This method help you create your own pagination based of need.
 <div id="table"></div>
-<div id="pagination"></div>
-<script>
+<div id="pagination"></div><br/>
+<script></br>
     $('#pagination').pagination({
     
         tableId : 'table',  
