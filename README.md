@@ -2,12 +2,15 @@
 This method help you create your own pagination based of needs  
 
 <div id="table"></div>  
+
 <div id="pagination"></div>  
   
 <script>  
 
     $('#pagination').pagination({  
+    
         tableId : 'table',  
+        
         refresh: @refresh,  
         numberOfDisplayedPage:3,  
         numberPerPage : 10,  
