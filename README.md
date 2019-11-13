@@ -101,8 +101,8 @@ Based on this method you will be able to create your own pagination. this method
 [HttpPost]
 public ActionResult loadTable(int? pageNumber = 1, int? pageSize = 10, bool refresh = true)
 {
-    var model = db.loadTable(pageNumber, pag
-    ViewBag.Refresh = r
+    var model = db.loadTable(pageNumber, pageSize);
+    ViewBag.Refresh = refresh ;
     return PartialView(model);
 }
 ```
