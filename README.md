@@ -106,3 +106,32 @@ public ActionResult loadTable(int? pageNumber = 1, int? pageSize = 10, bool refr
     return PartialView(model);
 }
 ```
+* Create Procedure
+```
+Create PROCEDURE [dbo].[ProName]
+	@PageNumber int = 1,
+	@PageSize int = 10
+AS
+BEGIN
+
+   Declare @skip int = 0 ;
+	SET @skip = (@PageNumber - 1) * @PageSize ;
+
+	With res
+	As
+	(
+	    Select * From Table
+	)
+
+	select *,
+	(
+	  select count(*) from res
+    )as Count
+	from
+	(
+	  Select * From res Order by date desc
+	  OFFSET @Skip Row Fetch Next @PageSize Rows Only
+	)T 
+END
+
+```
